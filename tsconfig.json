@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2016",              // Your target is fine
+    "module": "commonjs",             // This is necessary for Node.js
+    "outDir": "./dist",               // Output folder for transpiled files
+    "rootDir": "./src",               // Your source code directory
+    "esModuleInterop": true,          // Interoperability between ES and CommonJS
+    "resolveJsonModule": true,        // Allow importing JSON modules
+    "moduleResolution": "node",       // Ensure Node.js module resolution
+    "strict": true,                   // Enables strict type checking
+    "skipLibCheck": true,             // Skips checking of library files (optional, reduces compile time)
+    "forceConsistentCasingInFileNames": true  // Enforces consistent casing
+  },
+  "include": [
+    "src/**/*"                        // Include all files inside src directory
+  ],
+  "exclude": [
+    "node_modules"                    // Exclude node_modules from the compilation
+  ]
+}

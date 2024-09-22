@@ -58,3 +58,17 @@ export const fetchUpcomingMovies = async (): Promise<Movie[]> => {
     throw new Error("Failed to fetch upcoming movies");
   }
 }
+
+// Get details for a specific movie.
+export const fetchMovieDetails = async (movieId: number): Promise<Movie> => {
+  const apiKey = process.env.TMDB_API_KEY;
+  const url = `${baseUrl}/movie/${movieId}?api_key=${apiKey}&language=en-US`;
+
+  try {
+    const response = await axios.get(url);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching movie details", error);
+    throw new Error("Failed to fetch movie details");
+  }
+}
